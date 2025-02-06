@@ -81,12 +81,12 @@ export default function DiffViewer({ diff }: DiffViewerProps) {
             {diff.changedValues.map((change) => (
               <div
                 key={change.path}
-                className="flex items-center gap-2 text-sm font-mono"
+                className="grid grid-cols-[auto_1fr_auto_1fr] gap-2 items-center text-sm font-mono break-all"
               >
-                <span className="text-muted-foreground">{change.path}:</span>
-                <span className="text-red-600">{change.oldValue}</span>
-                <ArrowRight className="h-4 w-4" />
-                <span className="text-green-600">{change.newValue}</span>
+                <span className="text-muted-foreground whitespace-nowrap">{change.path}:</span>
+                <span className="text-red-600 px-2 py-1 bg-red-50 rounded">{change.oldValue}</span>
+                <ArrowRight className="h-4 w-4 justify-self-center" />
+                <span className="text-green-600 px-2 py-1 bg-green-50 rounded">{change.newValue}</span>
               </div>
             ))}
           </div>
